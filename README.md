@@ -2,6 +2,9 @@
 
 A utility function for composing React components with children function. Inspired by redux `compose` / lodash `flowRight`.
 
+## Installation
+    $ npm i --save compose-component
+
 ## Example
 The following code will render A1,A2,B1,B2
 ```jsx
