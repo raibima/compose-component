@@ -1,0 +1,34 @@
+{
+  "name": "compose-component",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/raibima/compose-component"
+  },
+  "author": "Raibima Putra <rayp1100@gmail.com>",
+  "license": "MIT",
+  "main": "dist/compose-component.cjs.js",
+  "module": "dist/compose-component.esm.js",
+  "browser": "dist/compose-component.umd.js",
+  "peerDependencies": {
+    "react": "^16.2.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "react": "^16.2.0",
+    "rollup": "^0.50.0",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^8.2.6",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-uglify": "^3.0.0"
+  },
+  "scripts": {
+    "build": "NODE_ENV=production rollup -c",
+    "dev": "rollup -c -w"
+  },
+  "files": [
+    "dist"
+  ]
+}
