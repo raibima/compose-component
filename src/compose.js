@@ -9,18 +9,18 @@ export default function compose(...Components) {
   }
   return Components.reduce(
     (Composed, Next) => {
-			return ({ children }) => (
-				<Composed>
-					{(...composedArgs) => (
-						<Next>
-							{(...nextArgs) => {
-								return children(...composedArgs, nextArgs);
-							}}
-						</Next>
-					)}
-				</Composed>
-			);
-		},
+      return ({ children }) => (
+        <Composed>
+          {(...composedArgs) => (
+            <Next>
+              {(...nextArgs) => {
+                return children(...composedArgs, nextArgs);
+              }}
+            </Next>
+          )}
+        </Composed>
+      );
+    },
     ({ children }) => <React.Fragment>{children()}</React.Fragment>
   );
 }
