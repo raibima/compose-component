@@ -1,4 +1,4 @@
-# Compose Component [![Build Status](https://travis-ci.org/raibima/compose-component.svg?branch=master)](https://travis-ci.org/raibima/compose-component)
+# Compose Component [![Build Status](https://travis-ci.org/raibima/compose-component.svg?branch=master)](https://travis-ci.org/raibima/compose-component) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 A utility function for composing React components with children function. Inspired by redux `compose` / lodash `flowRight`.
 
