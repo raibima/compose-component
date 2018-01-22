@@ -26,7 +26,8 @@
   },
   "scripts": {
     "build": "NODE_ENV=production rollup -c",
-    "dev": "rollup -c -w"
+    "dev": "rollup -c -w",
+    "test": "npm run build"
   },
   "files": [
     "dist"
