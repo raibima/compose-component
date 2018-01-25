@@ -16,6 +16,9 @@ export default [
       format: 'umd'
     },
     external: ['react'],
+    globals: {
+      react: 'React'
+    },
     plugins: [
       babel({
         exclude: ['node_modules/**']
@@ -29,6 +32,9 @@ export default [
   {
     input: 'src/compose.js',
     external: ['react'],
+    globals: {
+      react: 'React'
+    },
     output: [
       { file: pkg.main, format: 'cjs' },
       { file: pkg.module, format: 'es' }
