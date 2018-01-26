@@ -6,7 +6,7 @@ A utility function for composing React components with children function. Inspir
     $ npm i --save compose-component
 
 ## Example
-The following code will render A1,A2,B1,B2
+The following code will render `A1,A2-B1,B2`
 ```jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -26,10 +26,10 @@ const AB = compose(A, B);
 // is equivalent to
 //
 // <A>
-//   {A => (
+//   {(...A) => (
 //     <B>
 //       {
-//         B => <div>{`${A}-${B}`}</div>
+//         (...B) => <div>{`${A}-${B}`}</div>
 //       }
 //     </B>
 //   )}
