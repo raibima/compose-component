@@ -45,6 +45,21 @@ ReactDOM.render(
 );
 ```
 
+You can also pass props to your resulting component and it will be passed down to EVERY components you compose.
+
+_(Note that you might have to deal with component props naming conflicts. Having two components with at least 1 mutual props can lead to unwanted behaviors)_
+
+```jsx
+const Foo = ({ children, ...props }) => <div className={props.className}>{children('foo')}</div>
+const Bar = ({ children, ...props }) => <div style={props.style}>{children('bar')}</div>
+const FooBar = compose(Foo, Bar);
+
+// render
+<FooBar className="foo" style={{ fontSize: 14 }}>
+  {([ foo ], [ bar ]) => ... }
+</FooBar>
+```
+
 ## API
     compose(...Components: Array<ReactClass | ReactStatelessFunction>)
 Returns: `ReactClass` with a children function, the parameters of which consist of arrays from each Component's children function parameter
