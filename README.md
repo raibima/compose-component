@@ -8,8 +8,6 @@ A utility function for composing React components with children function. Inspir
 ## Example
 The following code will render `A1,A2-B1,B2`
 ```jsx
-import React from 'react';
-import ReactDOM from 'react-dom';
 import compose from 'compose-component';
 
 const A = ({ children }) => <div>{children('A1', 'A2')}</div>;
@@ -17,32 +15,12 @@ const B = ({ children }) => <div>{children('B1', 'B2')}</div>;
 
 const AB = compose(A, B);
 
-// <AB>
-//   {
-//     (A, B) => <div>{`${A}-${B}`}</div>
-//   }
-// </AB>
-//
-// is equivalent to
-//
-// <A>
-//   {(...A) => (
-//     <B>
-//       {
-//         (...B) => <div>{`${A}-${B}`}</div>
-//       }
-//     </B>
-//   )}
-// <A>
-
-ReactDOM.render(
-  <AB>
-    {(a1Args, [ b1, b2 ] /* destructured B args */) =>
-      <span>{`${a1Args.join()}-${b1},${b2}`}</span>
-    }
-  </AB>,
-  document.querySelector('#app')
-);
+// render
+<AB>
+  {(a1Args, [ b1, b2 ] /* destructured B args */) =>
+    <span>{`${a1Args.join()}-${b1},${b2}`}</span>
+  }
+</AB>
 ```
 
 You can also pass props to your resulting component and it will be passed down to EVERY components you compose.
